@@ -1,0 +1,145 @@
+/**index.wxss**/
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.navbar{
+  flex:none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  padding-bottom:2%;
+  border-bottom-color:#fff;
+  border-bottom-style:solid;
+}
+.navbar .item.active{
+  color:red;
+  border-bottom-color:red;
+  border-bottom-style:solid;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+}
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:.1% 6%;
+}
+
+.navigator-hover{
+  color:red;
+  padding-bottom:3%;
+  border-bottom-color:red;
+  border-bottom-style:solid;
+}
+.swiper-container{  
+  position: relative;  
+}  
+.swiper-container .swiper{  
+  height: 300rpx;  
+}  
+.swiper-container .swiper .img{  
+  width: 100%;  
+  height: 100%;  
+}  
+.swiper-container .dots{  
+  position: absolute;  
+  right: 40rpx;  
+  bottom: 20rpx;  
+  display: flex;  
+  justify-content: center;  
+}  
+.swiper-container .dots .dot{  
+  margin: 0 10rpx;  
+  width: 28rpx;  
+  height: 28rpx;  
+  background: #fff;  
+  border-radius: 50%;  
+  transition: all .6s;  
+  font: 300 18rpx/28rpx "microsoft yahei";  
+  text-align: center;  
+}  
+.swiper-container .dots .dot.active{  
+  background: #f80;  
+  color:#fff;  
+}  
+
+.navlist{
+  margin-top:10rpx;
+  width:100%;
+  height: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.navlist-container{
+    text-align: center;
+    width:100%;
+}
+.navlist-container .one,.navlist-container .two{
+  flex:none;
+  display: flex;
+  background: #fff;
+  text-align: center;
+  justify-content: space-between;
+    font-size: 26rpx;
+    margin-bottom:20rpx;
+}
+.navlist-container image{
+  width:60%;
+  height:100rpx;
+}
+.listtop, .listbottom{
+  flex: auto;
+  text-align: center;
+   justify-content: space-between;
+}
+
+
+.selectdata{
+  width:100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.selectdata .wapper .title{
+  color: red;
+  padding-bottom: 20rpx;
+  border-bottom-color:#eee;
+  border-bottom-style: solid;
+}
+.selectgoods image{
+  height: 350rpx;
+}
+.selectgoods{
+  margin-top: 10rpx;
+}
+.selectgoods .text{
+  width:90%;
+  margin:10rpx auto;
+}
+.selectgoods .text .name{
+  font-size:30rpx;
+  
+}
+.selectgoods .text .price{
+ text-align: left;
+}
+.selectgoods .text .price text{
+ color: red;
+ margin-left:40rpx;
+}
+.selectgoods .text .price button{
+  margin-left:300rpx;
+  margin-top:30rpx;
+}

@@ -1,0 +1,86 @@
+
+
+<!--index.wxml-->
+<!--导航条-->
+<view class="navbar ">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view> 
+
+<!--首页-->
+<view hidden="{{currentTab!=0}}">
+  <!--轮播图-->
+    <view class="recommend" >  
+        <view class="swiper-container">  
+          <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">  
+            <block wx:for="{{slider}}" wx:key="unique">  
+              <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">  
+                <image src="{{item.picUrl}}" class="img"></image>  
+              </swiper-item>  
+            </block>  
+          </swiper> 
+         <!--面板指示点-->
+          <view class="dots">  
+            <block wx:for="{{slider}}" wx:key="unique">  
+              <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>  
+            </block>  
+          </view>
+        </view>  
+
+    </view>
+    <!--列表-->
+    <view class="navlist" >  
+        <view class="navlist-container"> 
+          <view class="one"> 
+              <view class="listtop" wx:for="{{arrayone}}" wx:for-item="item" wx:key="unique">  
+                <view class="img">
+                  <image src="{{item.src}}"  mode="aspectFit"></image>
+                </view>
+                <view class="text">
+                  <text>{{item.text}}</text>
+                </view>
+              </view>
+           </view> 
+          <view class="two">
+              <view class="listbottom" wx:for="{{arraytwo}}" wx:for-item="item" wx:key="unique">  
+                <view class="img">
+                  <image src="{{item.src}}"  mode="aspectFit"></image>
+                </view>
+                <view class="text">
+                  <text>{{item.text}}</text>
+                </view>
+              </view>
+           </view>
+        </view>  
+    </view>
+
+    <!--今日精选-->
+  <view class="selectdata">
+    <view class="wapper">
+      <view class="title">—— 今日精选 ——</view>
+      <view class="selectgoods">
+        <image src="http://omsproductionimg.yangkeduo.com/images/2017-08-31/a69a79420adab3b84b84a90c8c708357.jpeg@750w_1l_50Q.src" mode="aspectFit">
+        </image>
+        <view class="text">
+           <view class="name">【半价疯抢中】（雅蒂诺正品*亏损2天）大规格 2017亲肤柔软 可机洗 夏凉被 空调被 单双人被</view>
+           <view class="price">
+              <text>￥12.20</text>
+              <button type="warn" size="mini" bindtap="tobind"> 去拼单> </button>
+           </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--服装-->
+<view hidden="{{currentTab!=1}}">
+  2
+</view>
+<!--水果-->
+<view hidden="{{currentTab!=2}}">
+  3
+</view>
+<!--生活-->
+<view hidden="{{currentTab!=3}}">
+   4
+</view>

@@ -1,0 +1,111 @@
+
+<!-- slider detail img start -->
+<view class="swiper-img">
+  <swiper class="detail-img-box" indicator-dots="true" autoplay="auto" interval="3000" duration="500">
+    <block wx:for="{{goodsli.imgUrl}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFit"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> 
+<!-- indicator-dots 是否显示面板指示点 indicator-color 指示点颜色-->
+<!-- slider detail img end -->
+<!-- detail content start -->
+<view class="detail-box">
+    <view class="detail-title">{{goodsli.title}}</view>
+    <view class="detail-content">
+        <view class="detail-price">
+            <text class="new-price">{{goodsli.group}}人团 ¥{{goodsli.groupPrice}}</text>
+            <text class="odd-price">原价{{goodsli.oddPrice}}</text>
+        </view>
+        <text class="detail-other">快递：包邮</text>
+    </view>
+    <view class="icon-img"></view>
+</view>
+<!-- / detail content end -->
+<!-- group play start -->
+<view class="groud-play-box">
+    <view class="title-box">拼团玩法</view>
+    <view class="group-play-content">
+        <view class="group-play-item">
+            <view class="group-play-img"></view>
+            <view>
+                <text>付款开团</text>
+                <text>或参团</text>
+            </view>
+        </view>
+
+        <view class="group-play-item group-play-center">
+            <view class="group-play-img "></view>
+            <view>
+                <text>分享给好友</text>
+                <text>邀请参团</text>
+            </view>
+        </view>
+
+        <view class="group-play-item group-play-last">
+            <view>
+                <text>达到人数</text>
+                <text>顺利开团</text>
+            </view>
+            <view class="group-play-img"></view>
+        </view>
+    </view>
+</view>
+<!-- / group play end -->
+<view class="fight-group-title">*开团并邀请好友参团，24小时内人数不足自动退款</view>
+<!-- 底部导航 -->
+<view class="footer">
+  <view class="nav">
+    <view class="navitem" bindtap="tohome">
+      <image src="{{home.icon}}" ></image>
+      <text>{{home.text}}</text>
+    </view>
+    <view class="navitem"  wx:if="{{collected}}" catchtap='onCollectedTap'>
+      <image src="{{collect[1].icon}}"></image>
+      <text>{{collect[1].text}}</text>
+    </view>
+    <view class="navitem"  wx:else catchtap='onCollectedTap'>
+      <image src="{{collect[0].icon}}"></image>
+      <text>{{collect[0].text}}</text>
+    </view>
+    <view class="navitem">
+      <image src="{{service.icon}}"></image>
+      <text>{{service.text}}</text>
+    </view>
+    <view class="navitem lone" bindtap="onChangeShowState">
+       <text>{{goodsli.fromPrice}}</text>
+       <text>{{lonebuy.text}}</text>
+    </view>
+    <view class="navitem together" bindtap="onChangeShowState">
+       <text>{{goodsli.groupPrice}}</text>
+      <text>{{cheapbuy.text}}</text>
+    </view>
+  </view>
+</view>
+<!-- 款式选择 -->
+<view class="selectstyle hide{{showView?'':'show'}}" animation="{{animation}}">
+  <view class="sellect"> 
+    <icon type="clear"  class="close" bindtap="onChangeShowState"/>
+    <view class="title">
+      <view class="img">
+        <image src="{{goodsli.imgUrl[0]}}" mode="aspectFit"></image>
+      </view>
+      <view class="selecttext">
+        <view class="selected-title">{{goodsli.title}}</view>
+        <view class="selected-price">￥{{goodsli.fromPrice}}</view>
+        <view class="warnsellect">请选择款式</view>
+      </view>
+    </view>
+     <view class="classname">尺寸选择</view>
+    <view class="selectsize">
+      <view class="size"  wx:for="{{goodsli.size}}"> <text> {{item}}</text> </view>
+    </view>
+    <view class="classname">颜色选择</view>
+    <view class="selectsize">
+      <view class="size"  wx:for="{{goodsli.color}}"> <text> {{item}}</text> </view>
+    </view>
+    <button type="warn" class="confirm" size="default" bindtap="onChangeShowState">确定</button>
+  </view> 
+</view>
